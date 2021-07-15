@@ -1,0 +1,61 @@
+
+{% extends 'store/main.html' %}
+{% load static %}
+<!--{% load crispy_forms_tags %} -->
+{% block content %}
+{{var.message}}
+	<div class="row">
+		<div>
+			<!-- Form -->
+			
+			<form action="{% url 'store:store' %}" method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="form-row">
+					<div class="form-group col-md-2.5 mb-0">
+					  {{ form.power|as_crispy_field }}
+					</div>
+					<div class="form-group col-md-2.5 mb-0">
+					  {{ form.speed|as_crispy_field }}
+					</div>
+					<div class="form-group col-md-3.5 mb-0">
+					{{ form.phases|as_crispy_field }}
+					</div>
+					<div class="form-group col-md-3.5 mb-0">
+					{{ form.purpose|as_crispy_field }}
+					</div>					
+				</div>
+				<button type="submit" class="btn btn-primary">Filter!</button>
+				<!--<div class="form-group">
+					<div class="list-group list-group-horizontal">
+						
+						{{ form.as_p }}
+
+					</div> -->
+				
+				<!--<button class="btn btn-primary btn-block mt-5" type="submit">Filter!</button> -->
+				
+			</form>
+		
+		</div>
+	</div>
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4">
+			<img class="thumbnail" src="{{ product.imageURL }}">
+			<div class="box-element product">
+				<h6><strong>{{ product.name }}</strong></h6>
+				<hr>
+
+				<button data-product="{{ product.id }}" data-action="add" class="btn btn-outline-secondary add-btn 
+				update-cart">Add to Cart</button>
+				<a class="btn btn-outline-success" href="#">View</a>
+				<h4 style="display: inline-block; float: right"><strong>$ {{ product.price | floatformat:2 }}</strong></h4>
+
+			</div>
+		</div>
+		{% endfor %}
+
+	</div>
+
+{% endblock content %}
+  
