@@ -69,6 +69,8 @@ class Product(models.Model):
             url = self.image.url
         except:
             url = ''
+            if url ==    '':
+                url = '/static/images/placeholder.png'
         return url
 
 
