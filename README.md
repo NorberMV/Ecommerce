@@ -6,11 +6,6 @@ Provide a secure payment integration with PayPal account  and checkout with PayP
 View previous and pending orders for registered users.
 Allows to registered users to manage (add, change, delete) his profile information  within the website.
 
-
-# Pictures
-
-<img src="https://github.com/NorberMV/Ecommerce/blob/master/pics/Ecommerce_db_diagram.png" width="600">
-
 ## Usage
 
 ```python
@@ -25,8 +20,13 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
+## Pictures
+### Database Model Diagram
+<img src="https://github.com/NorberMV/Ecommerce/blob/master/pics/Ecommerce_db_diagram.png" width="600">
+
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-Author: Norberto Moreno | 2020
+Author: Norberto Moreno | 2021
