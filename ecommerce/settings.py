@@ -96,7 +96,7 @@ DATABASES = {
     }
 }
 """
-
+# PostgreSQL Integration
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',  
